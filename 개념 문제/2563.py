@@ -1,4 +1,4 @@
-lst=[[0 for _ in range (100)] for _ in range (100)] 
+lst=[[0 for _ in range (100)] for _ in range (100)] //2차원배열
 
 k=int(input(""))
 for _ in range (k):
