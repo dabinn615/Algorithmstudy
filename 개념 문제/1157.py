@@ -1,25 +1,25 @@
 word=input("").upper().split()
 lst=[i for i in word[0]]
+#미리 리스트로 각 단어가 몇번 나와는지 만들어놓기!!
 
-setlst=set(lst)
-setlst=list(setlst)
+wordlst=[]
+for i in range(len(lst)):
+    cnt=lst.count(lst[i])
+    if [lst[i],cnt] not in wordlst:
+        wordlst.append([lst[i],cnt])
 
-cnt=0
-cntlst=[]
-dic={}
-for i in setlst:
-    dic.update({i:lst.count(i)})
+maxx=0
+for i in wordlst:
+    if i[1]>maxx:
+        maxx=i[1]
 
-value=[]
-for v in dic.values():
-    value.append(v)
+maxappear=[]
+for i in wordlst:
+    if i[1]==maxx:
+        maxappear.append(i[0])
 
-maxx=max(value)
-if value.count(maxx)!=1:
+if len(maxappear)!=1:
     print("?")
 else:
-    for k,v in dic.items():
-        if v==maxx:
-            print(k)
-        else:
+    print(maxappear[0])
             pass
